@@ -148,3 +148,31 @@
     <p><strong>Address:</strong> Jashpur Road, Pathalgaon, Chhattisgarh - 496118</p>
   </div>
 </section>
+<section id="order">
+  <div class="card">
+    <h2>Place Your Order</h2>
+    <p>Order water cans or jars online within Pathalgaon. Please fill out the form below:</p>
+    <form action="mailto:aadityasharma0076@gmail.com" method="POST" enctype="text/plain">
+      <label><strong>Your Name</strong></label>
+      <input type="text" name="name" placeholder="Enter your name" required>
+      
+      <label><strong>Your Address</strong></label>
+      <input type="text" name="address" placeholder="Delivery address in Pathalgaon" required>
+      
+      <label><strong>Select Product</strong></label>
+      <select name="product" required>
+        <option value="">-- Choose Product --</option>
+        <option value="Water Can">Water Can (20L)</option>
+        <option value="Water Jar">Water Jar</option>
+      </select>
+      
+      <label><strong>Quantity</strong></label>
+      <input type="number" name="quantity" placeholder="Enter quantity" required min="1">
+      
+      <label><strong>Payment Method</strong></label>
+      <input type="text" name="payment" value="Cash on Delivery" readonly>
+      
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+</section>
