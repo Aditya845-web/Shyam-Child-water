@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f8ff;
+      background: url('https://www.transparenttextures.com/patterns/water.png'), #e0f7fa;
       color: #333;
     }
     header {
@@ -42,19 +42,23 @@
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
     footer {
       background: #0077cc;
       color: white;
       text-align: center;
       padding: 20px;
     }
-    input, textarea, button, select {
+    button, input, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
-      box-sizing: border-box;
     }
     button {
       background-color: #0077cc;
@@ -64,6 +68,11 @@
     }
     button:hover {
       background-color: #005fa3;
+    }
+    .order-btn {
+      background-color: #25D366;
+      color: white;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -83,28 +92,27 @@
 
   <section id="home">
     <div class="card">
-      <h2>Welcome to Shyam Child Water</h2>
+      <h2>Welcome</h2>
       <p>We deliver clean, safe drinking water cans and jars directly to your doorstep in Pathalgaon. Trusted by families and businesses alike!</p>
+      <img src="https://5.imimg.com/data5/SELLER/Default/2021/3/LD/PK/QO/71926048/20-ltr-water-jar-500x500.jpg" alt="Water Can">
     </div>
   </section>
 
   <section id="about">
     <div class="card">
       <h2>About Us</h2>
-      <p>At Shyam Child Water, we are committed to ensuring access to fresh, hygienic drinking water for homes, offices, and commercial spaces. Our team works tirelessly to provide timely delivery and the best service in town.</p>
-      <p><strong>Business Owner:</strong> Manoj Kumar Sharma</p>
-      <p><strong>Address:</strong> Jashpur Road, Pathalgaon</p>
+      <p>Owner: <strong>Manoj Kumar Sharma</strong></p>
+      <p>We are committed to delivering fresh, hygienic drinking water with fast and friendly service.</p>
     </div>
   </section>
 
   <section id="services">
     <div class="card">
-      <h2>Our Services</h2>
+      <h2>Services</h2>
       <ul>
         <li>Water Can (20L) Delivery</li>
-        <li>Water Jars for Homes and Offices</li>
-        <li>Regular Weekly or On-Demand Supply</li>
-        <li>Fast and Friendly Service</li>
+        <li>Water Jar Supply for Homes & Offices</li>
+        <li>On-Demand & Weekly Supply Available</li>
       </ul>
     </div>
   </section>
@@ -112,61 +120,47 @@
   <section id="pricing">
     <div class="card">
       <h2>Pricing</h2>
-      <p><strong>Only ₹30 per Water Can or Jar</strong></p>
-      <p>Simple and transparent pricing. Payment accepted in cash on delivery.</p>
+      <p><strong>Just ₹30 per Can or Jar</strong></p>
+      <p>No hidden charges. Fast delivery across Pathalgaon.</p>
     </div>
   </section>
 
   <section id="order">
     <div class="card">
-      <h2>Place Your Order</h2>
-      <p>Order water cans or jars online within Pathalgaon. Orders will be sent via WhatsApp.</p>
-      <form onsubmit="sendWhatsApp(); return false;">
-        <label><strong>Your Name</strong></label>
-        <input type="text" id="name" placeholder="Enter your name" required>
-        
-        <label><strong>Your Address</strong></label>
-        <input type="text" id="address" placeholder="Delivery address in Pathalgaon" required>
-        
-        <label><strong>Select Product</strong></label>
-        <select id="product" required>
-          <option value="">-- Choose Product --</option>
-          <option value="Water Can (20L)">Water Can (20L)</option>
-          <option value="Water Jar">Water Jar</option>
-        </select>
-        
-        <label><strong>Quantity</strong></label>
-        <input type="number" id="quantity" placeholder="Enter quantity" required min="1">
-        
-        <button type="submit">Send Order on WhatsApp</button>
-      </form>
+      <h2>Order Now</h2>
+      <p>Choose your item and message us on WhatsApp:</p>
+      <ul>
+        <li>Can Order</li>
+        <a class="order-btn" href="https://wa.me/917610424750?text=I%20want%20to%20order%20a%20Water%20Can" target="_blank">
+          Order Can on WhatsApp
+        </a>
+        <br><br>
+        <li>Jar Order</li>
+        <a class="order-btn" href="https://wa.me/917610424750?text=I%20want%20to%20order%20a%20Water%20Jar" target="_blank">
+          Order Jar on WhatsApp
+        </a>
+        <p>Payment method: Cash on delivery</p>
+      </ul>
     </div>
   </section>
 
   <section id="contact">
     <div class="card">
       <h2>Contact Us</h2>
-      <p>Have questions? Call or WhatsApp us:</p>
-      <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/917610424750" target="_blank">+91 7610424750</a></p>
+      <p>Email: <a href="mailto:aadityasharma0076@gmail.com">aadityasharma0076@gmail.com</a></p>
+      <p>Phone: <a href="tel:7610424750">7610424750</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Address</h2>
+      <p>Jashpur Road, Pathalgaon, Chhattisgarh</p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Shyam Child Water. All rights reserved.</p>
+    &copy; 2025 Shyam Child Water | All rights reserved
   </footer>
-
-  <script>
-    function sendWhatsApp() {
-      var name = document.getElementById("name").value;
-      var address = document.getElementById("address").value;
-      var product = document.getElementById("product").value;
-      var quantity = document.getElementById("quantity").value;
-
-      var message = `New Water Order:%0AName: ${name}%0AAddress: ${address}%0AProduct: ${product}%0AQuantity: ${quantity}%0APayment: Cash on Delivery`;
-
-      var whatsappURL = `https://wa.me/917610424750?text=${message}`;
-      window.open(whatsappURL, "_blank");
-    }
-  </script>
 </body>
 </html>
