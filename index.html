@@ -65,6 +65,20 @@
     button:hover {
       background-color: #0277bd;
     }
+
+    /* New styling for image gallery */
+    .service-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .service-images img {
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body>
@@ -99,6 +113,9 @@
         <li>Weekly or On-Demand Supply</li>
         <li>Fast and Friendly Service</li>
       </ul>
+      <div class="service-images">
+        <img src="images/water-can.jpg" alt="Water Can">
+      </div>
     </div>
   </section>
 
@@ -153,7 +170,6 @@
 
       alert("Thank you for your order! You will receive confirmation on WhatsApp.");
 
-      // Send WhatsApp Message
       const msg = `Order Details:%0AName: ${name}%0AAddress: ${address}%0AProduct: ${product}%0AQuantity: ${quantity}%0ATotal: ₹${total}`;
       window.open(`https://wa.me/917610424750?text=${msg}`, '_blank');
     });
@@ -167,12 +183,16 @@
       const quantity = document.getElementById("quantity").value;
       const total = 30 * quantity;
 
-      doc.text("Shyam Child Water - Order Bill", 20, 20);
-      doc.text(`Name: ${name}`, 20, 30);
-      doc.text(`Address: ${address}`, 20, 40);
-      doc.text(`Product: ${product}`, 20, 50);
-      doc.text(`Quantity: ${quantity}`, 20, 60);
-      doc.text(`Total: ₹${total}`, 20, 70);
+      doc.setFontSize(16);
+      doc.text("Shyam Child Water", 105, 20, null, null, "center");
+      doc.setFontSize(12);
+      doc.text("Owner: Manoj Kumar Sharma", 150, 10);
+      doc.text(`Name: ${name}`, 20, 40);
+      doc.text(`Address: ${address}`, 20, 50);
+      doc.text(`Product: ${product}`, 20, 60);
+      doc.text(`Quantity: ${quantity}`, 20, 70);
+      doc.text(`Total: ₹${total}`, 20, 80);
+
       doc.save("Shyam-Water-Bill.pdf");
     }
   </script>
